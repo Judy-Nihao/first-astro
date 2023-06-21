@@ -10,6 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.6.5"
+    "astro": "^2.6.5",
+    "sass": "^1.63.4"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

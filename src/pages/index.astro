@@ -35,7 +35,10 @@ import Card from '../components/Card.astro';
 	</main>
 </Layout>
 
-<style>
+<style lang="scss">
+
+	$color-main: red;
+
 	main {
 		margin: auto;
 		padding: 1.5rem;
@@ -45,6 +48,7 @@ import Card from '../components/Card.astro';
 		font-size: 3rem;
 		font-weight: 800;
 		margin: 0;
+		color: $color-main;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
