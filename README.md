@@ -1,55 +1,34 @@
-# Astro Starter Kit: Basics
+# My fist Astro Site
+
+https://judy-nihao.github.io/first-astro/
+
+`astro.config.mjs` 設定
+
+build 屬性設定的是打包後 dist 資料夾中，負責裝 css 檔案 和 js 檔案的那個資料夾名稱。
+預設是 `_astro` 但是一定要改名稱！
+
+我實際遇到的怪現象， 如果用預設的 `_astro` 當資料夾名稱， gh-pages 網站會一直報錯說找不到 css 檔案，即使路徑名稱確認是正確的。
+
+後來把資料夾名稱改成 `my-assets` 才正常抓到 css 檔案。
+
+耗了 1 個小時以上才找到問題點...，照理來說官方的預設命名規則應該不會有問題，但實際上就是遇到了，記錄一下。
+
 
 ```
-npm create astro@latest -- --template basics
-```
+import { defineConfig } from 'astro/config';
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+// https://astro.build/config
+export default defineConfig({
+    site: 'https://judy-nihao.github.io',
+    base: '/first-astro',
+    build: {
+        assets: 'my-assets'
+      }
+    
+});
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
-
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+//  https://judy-nihao.github.io/first-astro
 
 ```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+![Alt text](image.png)
