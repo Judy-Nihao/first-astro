@@ -2,7 +2,7 @@
 
 https://judy-nihao.github.io/first-astro/
 
-`astro.config.mjs` 設定
+### `astro.config.mjs` 設定
 
 build 屬性設定的是打包後 dist 資料夾中，負責裝 css 檔案 和 js 檔案的那個資料夾名稱。
 預設是 `_astro` 但是一定要改名稱！
